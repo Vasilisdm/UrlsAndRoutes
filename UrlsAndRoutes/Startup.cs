@@ -28,7 +28,7 @@ namespace UrlsAndRoutes
             app.UseMvc(routes => {
                 routes.MapRoute(
                     name: "MyRoute",
-                    template: "{controller}/{action}/{id}",
+                    template: "{controller}/{action}/{id?}",
                     defaults: new { controller = "Home", action = "Index" },
                     constraints: new { id = new IntRouteConstraint() }
                 );
