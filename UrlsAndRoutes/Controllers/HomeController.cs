@@ -13,7 +13,7 @@ namespace UrlsAndRoutes.Controllers
                 Action = nameof(Index)
             });
 
-        public ViewResult CustomVariable()
+        public ViewResult CustomVariable(string id)
         {
             Result r = new Result
             {
@@ -21,8 +21,7 @@ namespace UrlsAndRoutes.Controllers
                 Action = nameof(CustomVariable)
             };
 
-            r.Data["Id"] = RouteData.Values["id"];
-
+            r.Data["Id"] = id;
             return View("Result", r);
         }
     }
