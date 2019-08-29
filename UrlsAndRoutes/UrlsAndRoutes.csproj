@@ -18,5 +18,6 @@
     <Folder Include="Controllers\" />
     <Folder Include="Views\" />
     <Folder Include="Views\Shared\" />
+    <Folder Include="Infrastructure\" />
   </ItemGroup>
 </Project>
