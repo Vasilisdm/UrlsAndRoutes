@@ -6,6 +6,7 @@ namespace UrlsAndRoutes.Controllers
 {
     public class CustomerController : Controller
     {
+        [Route("myroute")]
         public ViewResult Index() => View("Result",
             new Result
             {
