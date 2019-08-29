@@ -28,12 +28,7 @@ namespace UrlsAndRoutes
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvc(routes => {
-                routes.MapRoute(
-                    name: "MyRoute",
-                    template: "{controller=Home}/{action=Index}/{id:weekday?}"
-                );
-            });
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
