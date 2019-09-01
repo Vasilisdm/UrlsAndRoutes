@@ -35,11 +35,10 @@ namespace UrlsAndRoutes
             app.UseStaticFiles();
             app.UseMvc(routes => {
 
-                //routes.MapRoute(
-                //    name: "NewRoute",
-                //    template: "App/Do{action}",
-                //    defaults: new { Controller = "Home" }
-                //);
+                routes.Routes.Add(new LegacyRoute (
+                   "/articles/Windows_3.1_Overview.html",
+                   "/old/.NET_1.0_Class_Library"
+               ));
 
                 routes.MapRoute(
                     name: "default",
