@@ -13,13 +13,13 @@ namespace UrlsAndRoutes.Infrastructure
 
         public LegacyRoute(params string[] targetUrls)
         {
-            this.urls = targetUrls;
+            urls = targetUrls;
         }
 
         public Task RouteAsync(RouteContext context)
         {
-            string requestedUrl = context.HttpContext.Request.Path
-                .Value.TrimEnd('/');
+            string requestedUrl = context.HttpContext.Request.Path.Value.TrimEnd('/');
+
             if (urls.Contains(requestedUrl, StringComparer.OrdinalIgnoreCase))
             {
                 context.Handler = async ctx => {
