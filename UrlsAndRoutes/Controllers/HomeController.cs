@@ -22,6 +22,7 @@ namespace UrlsAndRoutes.Controllers
             };
 
             r.Data["Id"] = id ?? "<no value for id parameter provided>";
+            r.Data["Url"] = Url.Action("CustomVariable", "Index", new { id = "Mon" });
             return View("Result", r);
         }
     }
