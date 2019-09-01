@@ -16,6 +16,7 @@
                 <tr><th>@key :</th><td>@Model.Data[key]</td></tr>
             }
         </table>
-        <a asp-controller="Home" asp-action="CustomVariable" asp-route-id="Tue">This targets another controller</a>
+        <a asp-controller="Home" asp-action="CustomVariable" asp-route-id="Tue" asp-protocol="https"
+        asp-host="myserver.domain.com" asp-fragment="fragment">This targets another controller</a>
     </body>
 </html>
