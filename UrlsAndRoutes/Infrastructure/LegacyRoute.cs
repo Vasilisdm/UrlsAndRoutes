@@ -10,10 +10,12 @@ namespace UrlsAndRoutes.Infrastructure
     public class LegacyRoute : IRouter
     {
         private string[] urls;
+
         public LegacyRoute(params string[] targetUrls)
         {
             this.urls = targetUrls;
         }
+
         public Task RouteAsync(RouteContext context)
         {
             string requestedUrl = context.HttpContext.Request.Path
@@ -28,6 +30,7 @@ namespace UrlsAndRoutes.Infrastructure
             }
             return Task.CompletedTask;
         }
+
         public VirtualPathData GetVirtualPath(VirtualPathContext context)
         {
             return null;
