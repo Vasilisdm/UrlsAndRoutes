@@ -29,6 +29,13 @@ namespace UrlsAndRoutes
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseMvc(routes => {
+
+                routes.MapRoute(
+                    name: "NewRoute",
+                    template: "App/Do{action}",
+                    defaults: new { Controller = "Home" }
+                );
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}"
