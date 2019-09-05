@@ -34,6 +34,10 @@ namespace UrlsAndRoutes
             app.UseStatusCodePages();
             app.UseStaticFiles();
             app.UseMvc(routes => {
+                routes.MapRoute(
+                    name: "areas",
+                    template: "{area:exists}/{controller=Home}/{action=Index}"
+                );
 
                 routes.Routes.Add(new LegacyRoute (
                     app.ApplicationServices,
